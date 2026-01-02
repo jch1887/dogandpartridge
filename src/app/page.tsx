@@ -49,7 +49,7 @@ export default function Home() {
             <h1 className="heading-display text-4xl md:text-5xl lg:text-6xl text-white mb-2">
               Dog & Partridge
           </h1>
-            <p className="heading-display text-xl md:text-2xl lg:text-3xl text-white/90">
+            <p className="heading-display text-xl md:text-2xl lg:text-3xl text-white/90 italic">
               Irish Pub ☘️
             </p>
           </motion.div>
