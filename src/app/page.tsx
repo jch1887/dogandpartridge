@@ -25,11 +25,11 @@ export default function Home() {
       <section className="min-h-screen relative overflow-hidden flex items-center">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <Image
+        <Image
             src="/hero.jpg"
             alt="Dog & Partridge pub exterior with flower baskets and traditional signage"
             fill
-            priority
+          priority
             className="object-cover object-center"
             sizes="100vw"
           />
@@ -48,7 +48,7 @@ export default function Home() {
           >
             <h1 className="heading-display text-4xl md:text-5xl lg:text-6xl text-white mb-2">
               Dog & Partridge
-            </h1>
+          </h1>
             <p className="heading-display text-xl md:text-2xl lg:text-3xl text-white/90">
               Irish Pub ☘️
             </p>
@@ -99,7 +99,7 @@ export default function Home() {
       </section>
 
       {/* Quote Section */}
-      <section className="bg-background py-24 md:py-32 px-6">
+      <section className="bg-background-secondary py-24 md:py-32 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -198,7 +198,7 @@ export default function Home() {
       </section>
 
       {/* Hours Section */}
-      <section className="bg-background py-24 md:py-32 px-6">
+      <section className="bg-foreground text-background py-24 md:py-32 px-6">
         <div className="max-w-4xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -217,14 +217,14 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.1 }}
             >
-              <p className="text-foreground-muted text-xs tracking-[0.3em] uppercase mb-6 pb-4 border-b border-border">
+              <p className="text-background/50 text-xs tracking-[0.3em] uppercase mb-6 pb-4 border-b border-background/20">
                 Drinks
               </p>
               <ul className="space-y-4">
                 {drinkHours.map((item) => (
                   <li key={item.day} className="flex justify-between text-sm">
-                    <span className="text-foreground-muted">{item.day}</span>
-                    <span className="text-foreground">{item.hours}</span>
+                    <span className="text-background/70">{item.day}</span>
+                    <span className="text-background">{item.hours}</span>
                   </li>
                 ))}
               </ul>
@@ -236,18 +236,18 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <p className="text-foreground-muted text-xs tracking-[0.3em] uppercase mb-6 pb-4 border-b border-border">
+              <p className="text-background/50 text-xs tracking-[0.3em] uppercase mb-6 pb-4 border-b border-background/20">
                 Food Served
               </p>
               <ul className="space-y-4">
                 {foodHours.map((item) => (
                   <li key={item.day} className="flex justify-between text-sm">
-                    <span className="text-foreground-muted">{item.day}</span>
-                    <span className="text-foreground">{item.hours}</span>
+                    <span className="text-background/70">{item.day}</span>
+                    <span className="text-background">{item.hours}</span>
                   </li>
                 ))}
               </ul>
-              <p className="mt-6 pt-4 border-t border-border text-xs text-foreground-subtle">
+              <p className="mt-6 pt-4 border-t border-background/20 text-xs text-background/50">
                 No food served on Mondays.
               </p>
             </motion.div>
@@ -357,18 +357,26 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="bg-background py-16 px-6">
+      <section className="bg-background-secondary py-20 md:py-24 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.a
-            href="mailto:thedogsheffield@gmail.com"
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="heading-display text-3xl md:text-4xl mb-3"
+          >
+            Come say Howaya!
+          </motion.h2>
+          <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-foreground-muted hover:text-foreground transition-colors text-sm"
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="text-foreground-muted text-lg italic"
           >
-            thedogsheffield@gmail.com
-          </motion.a>
+            Céad Míle Fáilte
+          </motion.p>
     </div>
       </section>
     </>
