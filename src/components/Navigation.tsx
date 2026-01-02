@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -43,9 +44,16 @@ export default function Navigation() {
       <nav className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
         <Link
           href="/"
-          className={`heading-display text-lg tracking-wide transition-colors duration-300 ${textColor}`}
+          className={`flex items-center gap-2 heading-display text-lg tracking-wide transition-colors duration-300 ${textColor}`}
         >
           Dog & Partridge
+          <Image
+            src="/logo.png"
+            alt=""
+            width={28}
+            height={28}
+            className="opacity-90"
+          />
         </Link>
 
         {/* Desktop Navigation */}

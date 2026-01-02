@@ -1,10 +1,18 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer className="bg-foreground text-background py-16 px-6">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
+          <Image
+            src="/logo.png"
+            alt="Dog & Partridge Logo"
+            width={60}
+            height={60}
+            className="mx-auto mb-4"
+          />
           <h3 className="heading-display text-2xl mb-2">
             Dog & Partridge ☘️
           </h3>

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 
 const drinkHours = [
@@ -23,10 +24,24 @@ export default function FindUsPage() {
       {/* Hero */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-24 px-6 bg-background-secondary">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
+            className="mb-6"
+          >
+            <Image
+              src="/logo.png"
+              alt="Dog & Partridge Logo"
+              width={80}
+              height={80}
+              className="mx-auto"
+            />
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
             className="text-sm uppercase tracking-[0.2em] text-foreground-subtle mb-4"
           >
             Sheffield City Centre
@@ -34,7 +49,7 @@ export default function FindUsPage() {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="heading-display text-5xl md:text-6xl lg:text-7xl mb-6"
           >
             Find Us
@@ -176,26 +191,22 @@ export default function FindUsPage() {
         </div>
       </section>
 
-      {/* Map Embed Placeholder - Using a stylized box */}
+      {/* Google Maps Embed */}
       <FadeIn>
         <section className="px-6 pb-16 md:pb-24">
           <div className="max-w-5xl mx-auto">
-            <div className="bg-background-secondary aspect-video md:aspect-[21/9] flex items-center justify-center relative overflow-hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(45,90,61,0.08)_0%,transparent_70%)]" />
-              <div className="text-center relative z-10">
-                <div className="text-4xl mb-4">📍</div>
-                <p className="text-foreground-muted text-sm">
-                  56 Trippet Lane, Sheffield S1 4EL
-                </p>
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=56+Trippet+Lane+Sheffield+S1+4EL+UK"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-foreground text-sm underline underline-offset-4 hover:text-accent-copper transition-colors mt-2 inline-block"
-                >
-                  View on Google Maps →
-                </a>
-              </div>
+            <div className="aspect-video md:aspect-[21/9] w-full overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2379.8876!2d-1.4745!3d53.3815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48797882c7e5e3f1%3A0x8a5e5b5b5b5b5b5b!2s56%20Trippet%20Ln%2C%20Sheffield%20S1%204EL%2C%20UK!5e0!3m2!1sen!2suk!4v1704200000000!5m2!1sen!2suk"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Dog & Partridge Location - 56 Trippet Lane, Sheffield"
+                className="grayscale hover:grayscale-0 transition-all duration-500"
+              />
             </div>
           </div>
         </section>
