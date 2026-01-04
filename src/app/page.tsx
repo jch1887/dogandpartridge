@@ -274,7 +274,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="heading-display text-3xl md:text-4xl text-foreground mb-6"
           >
-            Home cooked menu including Irish classics like Spice Bags, Coddle & Chicken Fillet Rolls.
+            Home cooked menu including Irish classics like Spice Bags & Chicken Fillet Rolls.
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}

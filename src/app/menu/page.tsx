@@ -302,14 +302,6 @@ export default function MenuPage() {
             </FadeIn>
           ))}
 
-          {/* Footer Note */}
-          <FadeIn delay={0.3}>
-            <div className="mt-16 pt-8 border-t border-border text-center">
-              <p className="text-foreground-subtle text-sm">
-                Home cooked menu including Irish classics like Spice Bags, Coddle & Chicken Fillet Rolls.
-              </p>
-            </div>
-          </FadeIn>
         </div>
       </section>
     </div>
