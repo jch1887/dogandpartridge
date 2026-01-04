@@ -248,7 +248,7 @@ export default function MenuPage() {
 
           {menuSections.map((section, sectionIndex) => (
             <FadeIn key={section.title} delay={0.1 * sectionIndex}>
-              <div className="mb-16 last:mb-0">
+              <div className="mb-24 last:mb-0">
                 {/* Section Header */}
                 <div className="border-b-2 border-foreground pb-4 mb-8">
                   <h2 className="heading-display text-3xl md:text-4xl">
