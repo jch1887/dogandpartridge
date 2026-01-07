@@ -9,7 +9,7 @@ const drinkHours = [
   { day: "Tuesday-Wednesday", hours: "12-11pm" },
   { day: "Thursday", hours: "12-11.30pm" },
   { day: "Friday & Saturday", hours: "12-Midnight" },
-  { day: "Sunday", hours: "12-11.30ppm" },
+  { day: "Sunday", hours: "12-11.30pm" },
 ];
 
 const foodHours = [
@@ -22,7 +22,7 @@ export default function FindUsPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-24 px-6 bg-background-secondary">
+      <section className="pt-32 pb-12 md:pt-40 md:pb-16 px-6 bg-background-secondary">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -38,55 +38,64 @@ export default function FindUsPage() {
               className="mx-auto"
             />
           </motion.div>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-sm uppercase tracking-[0.2em] text-foreground-subtle mb-4"
-          >
-            Sheffield City Centre
-          </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="heading-display text-5xl md:text-6xl lg:text-7xl mb-6"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="heading-display text-5xl md:text-6xl lg:text-7xl"
           >
             Find Us
           </motion.h1>
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="section-padding">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-20">
-            {/* Left Column - Address & Contact */}
-            <div>
-              <FadeIn>
-                <div className="mb-12">
-                  <h2 className="text-sm uppercase tracking-[0.15em] text-foreground-subtle mb-4">
+      {/* Main Content - Map Left, Info Right */}
+      <section className="py-16 md:py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
+            {/* Left Column - Map */}
+            <FadeIn>
+              <div className="aspect-square lg:aspect-[4/5] w-full overflow-hidden bg-background-secondary">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2379.8876!2d-1.4745!3d53.3815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48797882c7e5e3f1%3A0x8a5e5b5b5b5b5b5b!2s56%20Trippet%20Ln%2C%20Sheffield%20S1%204EL%2C%20UK!5e0!3m2!1sen!2suk!4v1704200000000!5m2!1sen!2suk"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Dog & Partridge Location - 56 Trippet Lane, Sheffield"
+                  className="grayscale hover:grayscale-0 transition-all duration-500"
+                />
+              </div>
+            </FadeIn>
+
+            {/* Right Column - Info */}
+            <div className="flex flex-col justify-center">
+              <FadeIn delay={0.1}>
+                <div className="mb-10">
+                  <p className="text-xs uppercase tracking-[0.2em] text-foreground-subtle mb-3">
                     Address
-                  </h2>
+                  </p>
                   <address className="not-italic">
-                    <p className="heading-display text-3xl md:text-4xl mb-2">
+                    <p className="heading-display text-2xl md:text-3xl mb-1">
                       56 Trippet Lane
                     </p>
-                    <p className="text-xl text-foreground-muted">
-                      Sheffield S1 4EL, UK
+                    <p className="text-foreground-muted">
+                      Sheffield S1 4EL
                     </p>
                   </address>
                 </div>
               </FadeIn>
 
-              <FadeIn delay={0.1}>
-                <div className="mb-12">
-                  <h2 className="text-sm uppercase tracking-[0.15em] text-foreground-subtle mb-4">
+              <FadeIn delay={0.15}>
+                <div className="mb-10">
+                  <p className="text-xs uppercase tracking-[0.2em] text-foreground-subtle mb-3">
                     Email
-                  </h2>
+                  </p>
                   <a
                     href="mailto:thedogsheffield@gmail.com"
-                    className="text-foreground text-lg hover:text-accent-copper transition-colors underline underline-offset-4"
+                    className="text-foreground hover:text-accent-copper transition-colors"
                   >
                     thedogsheffield@gmail.com
                   </a>
@@ -94,38 +103,27 @@ export default function FindUsPage() {
               </FadeIn>
 
               <FadeIn delay={0.2}>
-                <div className="mb-12">
-                  <h2 className="text-sm uppercase tracking-[0.15em] text-foreground-subtle mb-4">
+                <div className="mb-10">
+                  <p className="text-xs uppercase tracking-[0.2em] text-foreground-subtle mb-3">
                     Parking
-                  </h2>
-                  <p className="text-foreground-muted">
-                    Should you be arriving by car, street parking is available.
+                  </p>
+                  <p className="text-foreground-muted text-sm">
+                    Street parking available nearby.
                   </p>
                 </div>
               </FadeIn>
 
-              <FadeIn delay={0.3}>
-                <div className="p-6 bg-background-accent">
-                  <p className="text-foreground font-medium">
-                    Walk-ins Only
-                  </p>
-                  <p className="text-foreground-muted text-sm mt-1">
-                    Drinking & Eating — No bookings needed.
-                  </p>
-                </div>
-              </FadeIn>
-
-              <FadeIn delay={0.4}>
-                <div className="mt-8">
+              <FadeIn delay={0.25}>
+                <div className="flex flex-wrap gap-3">
                   <a
                     href="https://www.google.com/maps/search/?api=1&query=56+Trippet+Lane+Sheffield+S1+4EL+UK"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background text-sm uppercase tracking-wider hover:bg-foreground/90 transition-colors"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-foreground text-background text-xs uppercase tracking-wider hover:bg-foreground/90 transition-colors"
                   >
-                    Open in Google Maps
+                    Get Directions
                     <svg
-                      className="w-4 h-4 transition-transform group-hover:translate-x-1"
+                      className="w-3.5 h-3.5"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -141,77 +139,60 @@ export default function FindUsPage() {
                 </div>
               </FadeIn>
             </div>
-
-            {/* Right Column - Opening Hours */}
-            <div>
-              <FadeIn delay={0.1}>
-                <div className="bg-foreground text-background p-8 md:p-10 mb-8">
-                  <h2 className="text-sm uppercase tracking-[0.15em] text-background/50 mb-6 pb-4 border-b border-background/20">
-                    Drinks
-                  </h2>
-                  <ul className="space-y-4">
-                    {drinkHours.map((item) => (
-                      <li key={item.day} className="flex justify-between items-baseline gap-4">
-                        <span className="text-background/70">{item.day}</span>
-                        <span className="text-background font-medium">{item.hours}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </FadeIn>
-
-              <FadeIn delay={0.2}>
-                <div className="bg-background-accent p-8 md:p-10">
-                  <h2 className="text-sm uppercase tracking-[0.15em] text-foreground-subtle mb-6 pb-4 border-b border-border">
-                    Food Served
-                  </h2>
-                  <ul className="space-y-4">
-                    {foodHours.map((item) => (
-                      <li key={item.day} className="flex justify-between items-baseline gap-4">
-                        <span className="text-foreground-muted">{item.day}</span>
-                        <span className="text-foreground font-medium">{item.hours}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="mt-6 pt-4 border-t border-border text-sm text-foreground-subtle">
-                    No food served on Mondays.
-                  </p>
-                </div>
-              </FadeIn>
-
-              <FadeIn delay={0.3}>
-                <div className="mt-8 p-4 border-l-4 border-accent-copper">
-                  <p className="text-foreground-muted text-sm">
-                    18 years & over only after 6pm.
-                  </p>
-                </div>
-              </FadeIn>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Google Maps Embed */}
-      <FadeIn>
-        <section className="px-6 pb-16 md:pb-24">
-          <div className="max-w-5xl mx-auto">
-            <div className="aspect-video md:aspect-[21/9] w-full overflow-hidden">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2379.8876!2d-1.4745!3d53.3815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48797882c7e5e3f1%3A0x8a5e5b5b5b5b5b5b!2s56%20Trippet%20Ln%2C%20Sheffield%20S1%204EL%2C%20UK!5e0!3m2!1sen!2suk!4v1704200000000!5m2!1sen!2suk"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Dog & Partridge Location - 56 Trippet Lane, Sheffield"
-                className="grayscale hover:grayscale-0 transition-all duration-500"
-              />
-            </div>
+      {/* Opening Hours Section */}
+      <section className="bg-foreground text-background py-16 md:py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <FadeIn>
+            <h2 className="heading-display text-3xl md:text-4xl text-center mb-12">
+              Opening Hours
+            </h2>
+          </FadeIn>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Drinks Hours */}
+            <FadeIn delay={0.1}>
+              <div className="border border-background/20 p-6 md:p-8">
+                <h3 className="text-xs uppercase tracking-[0.2em] text-background/50 mb-6">
+                  Drinks
+                </h3>
+                <ul className="space-y-3">
+                  {drinkHours.map((item) => (
+                    <li key={item.day} className="flex justify-between items-baseline gap-4 text-sm">
+                      <span className="text-background/70">{item.day}</span>
+                      <span className="text-background">{item.hours}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </FadeIn>
+
+            {/* Food Hours */}
+            <FadeIn delay={0.15}>
+              <div className="border border-background/20 p-6 md:p-8">
+                <h3 className="text-xs uppercase tracking-[0.2em] text-background/50 mb-6">
+                  Food Served
+                </h3>
+                <ul className="space-y-3">
+                  {foodHours.map((item) => (
+                    <li key={item.day} className="flex justify-between items-baseline gap-4 text-sm">
+                      <span className="text-background/70">{item.day}</span>
+                      <span className="text-background">{item.hours}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-6 pt-4 border-t border-background/20 text-xs text-background/50">
+                  No food served on Mondays.
+                </p>
+              </div>
+            </FadeIn>
           </div>
-        </section>
-      </FadeIn>
+        </div>
+      </section>
+
     </div>
   );
 }
-
